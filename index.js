@@ -1,18 +1,19 @@
-var password=document.getElementById("password");
+const passwordElement=document.getElementById("password");
 
- function genPassword() {
-    var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var passwordLength = 12;
-    var password = "";
- for (var i = 0; i <= passwordLength; i++) {
-   var randomNumber = Math.floor(Math.random() * chars.length);
+genPassword = () => {
+    const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const passwordLength = 12;
+    let password = "";
+ 
+ for (let i = 0; i <= passwordLength; i++) {
+   const randomNumber = Math.floor(Math.random() * chars.length);
    password += chars.substring(randomNumber, randomNumber +1);
   }
-        document.getElementById("password").value = password;
+        passwordElement.value = password;
  }
 
-function copyPassword() {
-  var copyText = document.getElementById("password");
+copyPassword = () => {
+  const copyText = document.getElementById("password");
   copyText.select();
   document.execCommand("copy");  
 }
